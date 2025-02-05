@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor "Prospective Student" as User
+actor "OpenAI" as OpenAI
+actor "Furhat" as Furhat
+
+rectangle "Information System" {
+    usecase "Ask About a Single Major" as SingleMajor
+    usecase "Request Comparison of Majors" as CompareMajors
+    usecase "Extract Keywords" as ExtractKeywords
+    usecase "Match Majors to URLs" as MatchURLs
+    usecase "Scrape Websites for Data" as ScrapeData
+    usecase "Analyze and Compare Data" as AnalyzeCompare
+    usecase "Generate Response via OpenAI" as GenerateResponse
+    usecase "Deliver Verbal/Visual Response" as DeliverResponse
+}
+
+User -> SingleMajor
+User -> CompareMajors
+SingleMajor -> ExtractKeywords
+CompareMajors -> ExtractKeywords
+ExtractKeywords -> MatchURLs
+MatchURLs -> ScrapeData
+ScrapeData -> AnalyzeCompare
+AnalyzeCompare -> GenerateResponse
+GenerateResponse -> OpenAI
+GenerateResponse -> DeliverResponse
+DeliverResponse -> Furhat
+Furhat -> User
+@enduml
