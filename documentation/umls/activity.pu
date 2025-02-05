@@ -1,0 +1,47 @@
+@startuml 
+start
+
+:Ask Furhat about specific major;
+if (Is query in cache?) then (yes)
+    :Fill in specific template;
+    :Send & Speak through Furhat;
+else (no)
+    :Trigger scraping based on keywords;
+    :Scrape website for information;
+    if (Can be handled with template?) then (yes)
+        :Fill in specific template;
+        :Save in cache if pattern is met;
+        :Send & Speak through Furhat;
+    else (no)
+        :Send query to OpenAI for dynamic response;
+        :Receive response from OpenAI;
+        :Save response in cache for future queries;
+        :Send & Speak through Furhat;
+    endif
+endif
+
+:Ask Furhat about comparing two majors;
+if (Is pattern in cache?) then (yes)
+    :Retrieve cached response;
+    :Send & Speak through Furhat;
+else (no)
+    :Trigger scraping based on keywords for both majors;
+    :Scrape website for information;
+    if (Can be handled with template?) then (yes)
+        :Fill in specific template;
+        :Save in cache if pattern is met;
+        :Send & Speak through Furhat;
+    else (no)
+        :Send query to OpenAI for dynamic response;
+        :Receive response from OpenAI;
+        :Save response in cache for future queries;
+        :Send & Speak through Furhat;
+    endif
+endif
+
+:Ask Furhat to display detailed information (e.g., fact sheet);
+:Scrape website for detailed information;
+:Display information on screen;
+:Say a short line based on the displayed information through Furhat robot;
+stop
+@enduml
