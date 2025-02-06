@@ -1,0 +1,26 @@
+@startuml
+title Sequence Diagram
+participant User
+participant Furhat
+participant "Web Scraper" as Scraper
+participant SRUWebsite
+participant OpenAI
+participant "Computer Screen" as Screen
+
+User -> Furhat: Ask about a major
+Furhat -> Scraper: Request information on major
+Scraper -> SRUWebsite: Fetch major details
+SRUWebsite -> Scraper: Return major details
+Scraper -> Furhat: Store JSON with major data
+Furhat -> OpenAI: Send JSON to ChatGPT for processing
+OpenAI -> Furhat: Generate & return response
+
+alt Furhat Only
+    Furhat -> User: Explain the major details
+else Computer Connected
+    Furhat -> Screen: Display major details
+end
+
+Furhat -> User: Answer follow-up questions
+@enduml
+
