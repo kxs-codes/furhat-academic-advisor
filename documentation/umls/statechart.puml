@@ -1,0 +1,20 @@
+@startuml
+title Furhat State Chart
+[*] --> WaitingForUser
+
+WaitingForUser --> RequestScraping : User asks about a major
+RequestScraping --> FetchingData : Scraper sends request to SRU website
+FetchingData --> ProcessingData : Website responds successfully
+
+ProcessingData --> OpenAIProcessing : Send extracted data to OpenAI
+OpenAIProcessing --> DecideOutput : Process response and choose output method
+
+DecideOutput --> FurhatSpeaking : Furhat speaks answer [Furhat only]
+DecideOutput --> DisplayOnScreen : Display response on computer screen [Computer only]
+
+FurhatSpeaking --> [*] : Finish
+DisplayOnScreen --> [*] : Finish
+
+FetchingData --> ErrorHandling : Website fails to respond
+ErrorHandling --> WaitingForUser : Notify user & wait for new request
+@enduml
