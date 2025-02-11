@@ -1,3 +1,7 @@
+git rm -r --cached .idea
+git rm -r --cached .settings bin target
+git commit -m "Updated .gitignore to exclude IDE-specific files"
+git push origin your-branch
 package furhatos.app.templateadvancedskill.utils
 
 import furhat.libraries.standard.utils.logger
