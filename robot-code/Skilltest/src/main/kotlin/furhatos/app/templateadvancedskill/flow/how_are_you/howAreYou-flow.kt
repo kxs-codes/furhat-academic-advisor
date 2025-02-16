@@ -1,8 +1,9 @@
 package furhatos.app.templateadvancedskill.flow.how_are_you
 
+import furhatos.app.templateadvancedskill.nlu.*
 import furhatos.flow.kotlin.*
 import furhatos.util.Language
-
+import furhatos.app.templateadvancedskill.responses.phrases
 
 /**
  * Tip!
@@ -17,23 +18,37 @@ import furhatos.util.Language
  **/
 val HowAreYou: State = state {
     onEntry {
-        furhat.ask(phrases.howAreYou)
+        furhat.ask("What would you like to talk about?")
     }
 
-    onResponse<PositiveReactionIntent> {
-        val positiveWord: String? =
-            it.intent.positiveExpressionEntity?.text // Check for what word the person used in the intent
-        furhat.say(phrases.gladYouFeelGood(positiveWord))
+    onResponse<ComputerScienceIntent> {
+        furhat.say(phrases.A_ComputerScience)
+        terminate()
+    }
+    onResponse<DepartmentIntent>{
+        furhat.say(phrases.A_CompSciDept)
         terminate()
     }
 
+    onResponse<FourYearPlanFY1Intent> {
+        furhat.say(phrases.A_FourYearPlanFallY1)
+        terminate()
+    }
+    onResponse<CsMajorIntent> {
+        furhat.say(phrases.A_CSMajor)
+        terminate()
+    }
+    onResponse<CyberMajorIntent> {
+        furhat.say(phrases.A_CyberMajor)
+        terminate()
+    }
     onResponse {
-        furhat.say(phrases.wellFeelingsAreComplex)
-        delay(400)
+        furhat.say("I'm not sure about that. But I can tell you about computer science, cybersecurity, or the Computing four-year study plan. What would you like to know?")
         terminate()
     }
 
     onNoResponse {
+        furhat.say("I didn't hear anything. Could you repeat?")
         terminate()
     }
 }
