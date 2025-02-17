@@ -63,3 +63,63 @@ class WhatIsThisIntent : Intent() {
         )
     }
 }
+class ComputerScienceIntent : Intent() {
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "what is computer science",
+            "tell me about computer science",
+            "can you explain computer science",
+            "define computer science"
+        )
+    }
+}
+class FourYearPlanFY1Intent : Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "four year plan",
+            "what should I take my first semester",
+            "what classes should i take for my first semester",
+            "Fall freshman year plan"
+        )
+    }
+}
+class DepartmentIntent : Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "Departments",
+            "Department",
+            "tell me about department of computer science"
+        )
+    }
+}
+class CsMajorIntent : Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "computing major",
+            "Tell me about the computer science major"
+        )
+    }
+}
+class CyberMajorIntent : Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "Cyber security major",
+            "Cyber security",
+            "Tell me about the Cyber security major"
+        )
+    }
+}
+class ConfirmIntent : Intent() {
+    override fun getExamples(lang: Language): List<String> {
+        return listOf(
+            "yes",
+            "yeah",
+            "that's correct",
+            "correct",
+            "exactly",
+            "that's right",
+            "yep",
+            "sure"
+        )
+    }
+}
