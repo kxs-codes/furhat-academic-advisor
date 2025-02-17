@@ -1,0 +1,45 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+*.iml
+.vscode/
+*.sublime-workspace
+
+# Build and dependency directories
+/build/
+.gradle/
+out/
+build/
+!gradle-wrapper.jar
+
+# Kotlin-specific files
+*.class
+*.jar
+*.war
+*.ear
+*.kts
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Furhat-specific files
+*.skill
+*.furhat
+furhat-skill-template/
+furhat-skill-sdk/
+furhat-skill-*
+/logs/
+/data/
+
+# Package manager files
+node_modules/
+package-lock.json
+yarn.lock
+
+# Miscellaneous
+*.swp
+*.swo
