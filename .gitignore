@@ -3,7 +3,7 @@
 Thumbs.db
 
 # IDE-specific files
-.idea/
+.idea
 *.iml
 .vscode/
 *.sublime-workspace
