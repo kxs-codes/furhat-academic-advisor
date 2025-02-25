@@ -46,6 +46,7 @@ repositories {
 dependencies {
     implementation 'com.furhatrobotics.furhatos:furhat-commons:2.7.0'
     implementation 'com.furhatrobotics.assets:StandardLibraryCollection:1.2.0'
+    implementation 'org.jsoup:jsoup:1.18.3'
 }
 
 jar {

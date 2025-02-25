@@ -29,11 +29,6 @@ val HowAreYou: State = state {
         furhat.say(phrases.A_CompSciDept)
         terminate()
     }
-
-    onResponse<FourYearPlanFY1Intent> {
-        furhat.say(phrases.A_FourYearPlanFallY1)
-        terminate()
-    }
     onResponse<CsMajorIntent> {
         furhat.say(phrases.A_CSMajor)
         terminate()

@@ -62,5 +62,8 @@ class Phrases {
 
     }
     val A_CyberSecurityDegree: Utterance = utterance {}
+    val A_Gpa: Utterance = utterance {
+        +"you need a 2.0 or higher gpa."
+    }
 }
 val phrases = Phrases()
